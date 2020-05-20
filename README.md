@@ -1,7 +1,2 @@
-### Gapminder Project
-Animate a scatterplot with pandas and matplotlib
-
-
-![Scatterplot - Life Expectancy and Fertility Rate (Gapminder 1960-2015)](output.gif)
-
-![Alternative Scatterplot - Life Expectancy and Fertility Rate (Gapminder 1960-2015)](output2.gif)
+### Allspice Arrays - Dennis
+GitHub repository for first 5 weeks -- includes data wrangling in pandas, data visualization, classification models, regression models, and time series analysis.

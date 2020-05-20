@@ -129,7 +129,7 @@ dmypy.json
 .pyre/
 
 # personal files
-learning_matplotlib.ipynb
-long_wide_tables.ipynb
-/scatter_images
-/scatter_images_alt
+/Week_1/learning_matplotlib.ipynb
+/Week_1/long_wide_tables.ipynb
+/Week_1/scatter_images
+/Week_1/scatter_images_alt
