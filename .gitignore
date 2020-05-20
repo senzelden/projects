@@ -131,3 +131,5 @@ dmypy.json
 # personal files
 learning_matplotlib.ipynb
 long_wide_tables.ipynb
+/scatter_images
+/scatter_images_alt
