@@ -127,3 +127,7 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# personal files
+learning_matplotlib.ipynb
+long_wide_tables.ipynb
