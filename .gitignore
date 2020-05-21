@@ -129,7 +129,10 @@ dmypy.json
 .pyre/
 
 # personal files
-/Week_1/learning_matplotlib.ipynb
-/Week_1/long_wide_tables.ipynb
-/Week_1/scatter_images
-/Week_1/scatter_images_alt
+/week_1/gapminder/learning_matplotlib.ipynb
+/week_1/gapminder/long_wide_tables.ipynb
+/week_1/gapminder/scatter_images
+/week_1/gapminder/scatter_images_alt
+/week_1/gapminder/gapminder_lifeexpectancy.xlsx
+/week_1/gapminder/gapminder_population.xlsx
+/week_1/gapminder/gapminder_total_fertility.csv
