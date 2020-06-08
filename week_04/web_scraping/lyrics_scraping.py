@@ -4,16 +4,19 @@ import os
 
 
 # select artist for scraping
-ARTISTS = ["Barbra Streisand", "Peaches", "Pavement", "Sonic-Youth"]
+ARTISTS = ["Barbra Streisand", "Peaches", "Pavement", "Sonic Youth", "France Gall"]
 
 
 def lyrics_scraping(artist):
     """goes to lyrics.com, scrapes lyrics for every song by artist and saves each song to .txt file"""
+    # make sure empty spaces in artist's name ar filled with dash:
+    artist = artist.replace(" ", "-")
+
     # create folder for lyrics, if it doesn't exist yet
     try:
-        os.makedirs(f"{artist}_lyrics")
+        os.makedirs(f"{artist}-lyrics")
     except FileExistsError:
-        # directory already exists
+        # if directory already exists
         pass
 
     # get song links and song titles from artist page
