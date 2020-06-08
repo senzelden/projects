@@ -4,7 +4,7 @@ import os
 
 
 # select artist for scraping
-ARTISTS = ["Sonic-Youth"]
+ARTISTS = ["Barbra Streisand", "Peaches", "Pavement", "Sonic-Youth"]
 
 
 def lyrics_scraping(artist):
