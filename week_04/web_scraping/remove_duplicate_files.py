@@ -61,8 +61,8 @@ def main():
     for artist in ARTISTS:
         # make sure empty spaces in artist's name ar filled with dash:
         artist = artist.replace(" ", "-")
-        remove_compare_beginning(f"{artist.lower()}-lyrics")
-        remove_fuzzywuzzy(f"{artist.lower()}-lyrics")
+        remove_compare_beginning(f"lyrics/{artist.lower()}-lyrics")
+        remove_fuzzywuzzy(f"lyrics/{artist.lower()}-lyrics")
 
 
 if __name__ == "__main__":

@@ -4,7 +4,7 @@ import os
 
 
 # select artist for scraping
-ARTISTS = ["Barbra Streisand", "Peaches", "Pavement", "Sonic Youth", "France Gall"]
+ARTISTS = ["Britney Spears"]
 
 
 def lyrics_scraping(artist):
@@ -14,7 +14,7 @@ def lyrics_scraping(artist):
 
     # create folder for lyrics, if it doesn't exist yet
     try:
-        os.makedirs(f"{artist}-lyrics")
+        os.makedirs(f"lyrics/{artist}-lyrics")
     except FileExistsError:
         # if directory already exists
         pass
@@ -31,7 +31,7 @@ def lyrics_scraping(artist):
         song_page = soup(r2.text, "html.parser")
         # find lyrics on page and save to .txt file
         for j in song_page.find_all(attrs={"id": "lyric-body-text"}):
-            with open(f"{artist}-lyrics/{song_title}.txt", "w", encoding="utf-8") as f2:
+            with open(f"lyrics/{artist}-lyrics/{song_title}.txt", "w", encoding="utf-8") as f2:
                 f2.write(j.text)
 
 
