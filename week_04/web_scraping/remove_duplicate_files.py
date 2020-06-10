@@ -6,7 +6,7 @@ from fuzzywuzzy import fuzz
  and then get remaining duplicates with fuzzywuzzy. This works
  reasonably well with song titles."""
 
-ARTISTS = ["France Gall"]
+ARTISTS = ["Stephen Malkmus", "The Velvet Underground"]
 
 
 # brute method
@@ -20,7 +20,7 @@ def remove_compare_beginning(directory):
     for file in allfiles:
         for single_file in single_files:
             # a bit dangerous: if a track with the name "a" existed, every track starting with "a" would be deleted
-            if file.lower().startswith(single_file[:-4].lower()):
+            if (file.lower().startswith(single_file[:-4].lower())) & (len(single_file[:-4]) >= 5):
                 print(file, single_file)
                 removed_files.append(file)
                 os.remove(directory + "/" + file)
