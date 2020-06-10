@@ -6,7 +6,7 @@ from fuzzywuzzy import fuzz
  and then get remaining duplicates with fuzzywuzzy. This works
  reasonably well with song titles."""
 
-ARTISTS = ["Stephen Malkmus", "The Velvet Underground"]
+ARTISTS = ["Daft Punk"]
 
 
 # brute method
@@ -45,7 +45,7 @@ def remove_fuzzywuzzy(directory):
             token_set_ratio = fuzz.token_set_ratio(file[:-4].lower(), single_file[:-4].lower())
             # Token Set Ratio seems to be the best method to check similarity for this problem
             # if ratio > 80 sufficient for english titles
-            if token_set_ratio >= 86:  # 86 works best for France Gall
+            if (token_set_ratio >= 90) & (len(single_file[:-4]) >= 5):  # 86 works best for France Gall
                 print(file, single_file)
                 print("Ratio: ", ratio)
                 print("Partial Ratio: ", partial_ratio)
