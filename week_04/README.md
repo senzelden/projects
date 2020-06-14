@@ -1,6 +1,6 @@
 # Project: Lyrics Classifier / Lyrik Classifier
 
-![Indie Guitar](guitar.jpg)
+![Indie Guitar](guitar.png)
 
 ### Background
 
