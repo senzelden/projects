@@ -8,16 +8,18 @@ from sklearn.naive_bayes import MultinomialNB
 
 
 def artist_lyrics(df, artist):
+    """returns lyrics and indices of artist"""
     rows = df[df.index == artist]
     return rows["SONGS"], rows.index
 
 
-def create_song(df, response2, response3):
-    complete_lyrics, indices = artist_lyrics(df, response2)
+def create_song(df, artist, n_words):
+    """vectorizes words in songs and creates random song"""
+    complete_lyrics, indices = artist_lyrics(df, artist)
     vector_df, cv = vectors_and_df(complete_lyrics, indices)
     words = vector_df.columns.values.tolist()
     weights = vector_df.mean(axis=0).values.tolist()
-    return join_random_words(words, weights, n_words=int(response3))
+    return join_random_words(words, weights, n_words=int(n_words))
 
 
 def create_song_list(artists):
@@ -36,6 +38,7 @@ def create_song_list(artists):
 
 
 def get_df_slice(df, list_of_bands):
+    """returns DataFrame with songs by artists in list"""
     df_list = []
     for band in list_of_bands:
         band_df = df.filter(like=band, axis=0)
@@ -43,7 +46,17 @@ def get_df_slice(df, list_of_bands):
     return pd.concat(df_list)
 
 
+def isint(s):
+    """checks if string represents integer"""
+    try:
+        int(s)
+        return True
+    except ValueError:
+        return False
+
+
 def join_random_words(words, weights, n_words=20):
+    """joins words by artist based on weights"""
     song = []
     for i in range(n_words):
         word = random.choices(words, weights=weights)  # weighted probabilites (unnormalized)
@@ -52,7 +65,7 @@ def join_random_words(words, weights, n_words=20):
 
 
 def merge_dfs(first_df, second_df):
-    # merge and set band names as index
+    """merge dfs and set band names as index"""
     df2 = pd.merge(first_df, second_df, how="left", left_on=first_df.index, right_on=second_df.index)
     df2 = df2.rename({"band_names": "BAND NAMES", "lyrics": "SONGS"}, axis=1)
     del df2["key_0"]
@@ -63,6 +76,7 @@ def merge_dfs(first_df, second_df):
 
 
 def most_songs(df, amount=10):
+    """returns Series of bands sorted by number of songs in DataFrame"""
     return df.groupby("BAND NAMES").count().sort_values(by="SONGS", ascending=False).head(amount)
 
 
@@ -71,6 +85,7 @@ def number_of_songs(df, artist):
 
 
 def predict_artist(df, n_artists=20):
+    """"builds model and prints prediction for input"""
     predict_df = get_df_slice(df, most_songs(df, n_artists).index.tolist())
     vector_df, cv = vectors_and_df(predict_df["SONGS"], predict_df.index)
     # Define features and target column
@@ -95,7 +110,7 @@ def predict_artist(df, n_artists=20):
 
 
 def print_prediction(song_lyrics, list_of_bands, cv, m):
-    """predicts artist of song based on artists in corpus"""
+    """prints artist prediction of song"""
     # transform song into vector matrix
     new_song_vecs = cv.transform(song_lyrics)
     ynew = new_song_vecs.todense()
@@ -128,14 +143,6 @@ def print_this(element):
         print_this("dash_line")
         print_this("new_line")
         print("This program explores a data set of lyrics by 558 indie rock bands with a total amount of 16875 songs.")
-
-
-def isint(s):
-    try:
-        int(s)
-        return True
-    except ValueError:
-        return False
 
 
 def vectors_and_df(complete_lyrics, indices):
