@@ -1,1 +1,2 @@
-#### a place to try out pandas
+#### pandas playground
+experiment with pandas
