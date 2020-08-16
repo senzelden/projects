@@ -129,11 +129,24 @@ dmypy.json
 .pyre/
 
 # personal files
-/week_01/gapminder/learning_matplotlib.ipynb
-/week_01/gapminder/long_wide_tables.ipynb
-/week_01/gapminder/scatter_images
-/week_01/gapminder/scatter_images_alt
-/week_01/gapminder/scatter_images_gm
-/week_01/gapminder/gapminder_lifeexpectancy.xlsx
-/week_01/gapminder/gapminder_population.xlsx
-/week_01/gapminder/gapminder_total_fertility.csv
+/gapminder/gapminder/learning_matplotlib.ipynb
+/gapminder/gapminder/long_wide_tables.ipynb
+/gapminder/gapminder/scatter_images
+/gapminder/gapminder/scatter_images_alt
+/gapminder/gapminder/scatter_images_gm
+/gapminder/gapminder/gapminder_lifeexpectancy.xlsx
+/gapminder/gapminder/gapminder_population.xlsx
+/gapminder/gapminder/gapminder_total_fertility.csv
+/gapminder/pandas_intro/
+/gapminder/plotting_in_python/
+/gapminder/python_challenges/
+/gapminder/gapminder/gapminder.project.dennis.ipynb
+/gapminder/gapminder/gapminder_multiple_plots.ipynb
+/gapminder/gapminder/output.gif
+/gapminder/gapminder/output_mult.gif
+/titanic/feature_engineering
+/titanic/logistic_regression
+/titanic/machine_learning_intro
+/titanic/titanic/kaggle_submission.csv
+/titanic/titanic/kaggle_submission_rf.csv
+/bikeshare/bikeshare/bike_notebook_tryout.ipynb
