@@ -30,4 +30,4 @@ Go [lyrics](https://github.com/senzelden/projects/tree/master/lyrics_classifier/
 #### 5. Berlin Temperature Forecast
 Time series project to predict future temperature for Berlin Tempelhof using
 AR and ARIMA models with a Walk Forward approach.
-Go [here](https://github.com/senzelden/projects/tree/master/week_05/temperature_forecast)
+Go [here](https://github.com/senzelden/projects/tree/master/time_series/temperature_forecast)
